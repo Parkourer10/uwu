@@ -125,7 +125,6 @@ def get_batch(split, tokenizer):
     return x, y
 
 # Tokenizer Initialization
-tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
 tokenizer.pad_token = tokenizer.eos_token  # Set pad token for some models
 
 # Initialize tracking variables
