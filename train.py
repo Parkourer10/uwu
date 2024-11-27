@@ -7,11 +7,12 @@ import numpy as np
 import torch
 from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.distributed import init_process_group, destroy_process_group
-from transformers import AutoTokenizer
 from model import GPTConfig, GPT
+from transformers import GPT2Tokenizer
+
 
 # -----------------------------------------------------------------------------
-
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 out_dir = 'out'
 eval_interval = 2000
 log_interval = 1
@@ -231,7 +232,7 @@ if wandb_log and master_process:
     wandb.init(project=wandb_project, name=wandb_run_name, config=config)
 
 # training loop
-X, Y = get_batch('train') # fetch the very first batch
+X, Y = get_batch('train', tokenizer) # fetch the very first batch
 t0 = time.time()
 local_iter_num = 0 # number of iterations in the lifetime of this process
 raw_model = model.module if ddp else model # unwrap DDP container if needed
