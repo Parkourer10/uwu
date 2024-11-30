@@ -26,8 +26,8 @@ wandb_log = False # disabled by default
 wandb_project = 'uwu'
 wandb_run_name = 'smallGPT'
 gradient_accumulation_steps = 4 
-batch_size = 128  
-block_size = 1024
+batch_size = 64  
+block_size = 512
 # model
 n_layer= 12
 n_head= 12
