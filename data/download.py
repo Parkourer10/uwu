@@ -5,8 +5,8 @@ This downloads the tokenized dataset. run this to save compute lol
 import subprocess
 
 urls = [
-    "https://huggingface.co/datasets/lparkourer10/small/resolve/main/train.bin",
-    "https://huggingface.co/datasets/lparkourer10/small/resolve/main/val.bin"
+    "https://huggingface.co/datasets/lparkourer10/bigbigbigman/resolve/main/train.bin",
+    "https://huggingface.co/datasets/lparkourer10/bigbigbigman/resolve/main/val.bin"
 ]
 
 for url in urls:
