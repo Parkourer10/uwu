@@ -29,9 +29,9 @@ gradient_accumulation_steps = 4
 batch_size = 64  
 block_size = 512
 # model
-n_layer= 12
-n_head= 12
-n_embd= 768
+n_layer= 29
+n_head= 4
+n_embd= 1128
 dropout = 0.0
 bias = False
 # adamw optimizer
