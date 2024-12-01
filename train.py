@@ -29,9 +29,9 @@ gradient_accumulation_steps = 4
 batch_size = 64  
 block_size = 512
 # model
-n_layer= 29
-n_head= 4
-n_embd= 1128
+n_layer= 24
+n_head= 16
+n_embd= 1024
 dropout = 0.0
 bias = False
 # adamw optimizer
@@ -52,7 +52,7 @@ backend = 'nccl' # 'nccl', 'gloo', etc.
 # system
 device = 'cuda' # examples: 'cpu', 'cuda', 'cuda:0', 'cuda:1' etc., or try 'mps' on macbooks
 dtype = 'bfloat16' if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else 'float16'
-compile = True # use PyTorch 2.0 to compile the model to be faster
+compile = False # use PyTorch 2.0 to compile the model to be faster
 # -----------------------------------------------------------------------------
 
 # Configuration and argument parsing
