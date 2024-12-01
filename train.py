@@ -147,7 +147,7 @@ if init_from == 'scratch':
 elif init_from == 'resume':
     print(f"Resuming training from {out_dir}")
     # Load model from model.bin
-    model_path = os.path.join(out_dir, 'model.bin')
+    model_path = os.path.join(out_dir, 'pytorch_model.bin')
     checkpoint = torch.load(model_path, map_location=device)
     
     # Restore model arguments
@@ -267,7 +267,7 @@ while True:
                     'config': config,
                 }
                 print(f"saving checkpoint to {out_dir}")
-                torch.save(checkpoint, os.path.join(out_dir, 'model.bin'))
+                torch.save(checkpoint, os.path.join(out_dir, 'pytorch_model.bin'))
                 tokenizer.save_pretrained(out_dir)
     if iter_num == 0 and eval_only:
         break
@@ -319,7 +319,7 @@ if master_process:
         'best_val_loss': best_val_loss,
         'config': config,
     }
-    torch.save(checkpoint, os.path.join(out_dir, 'model.bin'))
+    torch.save(checkpoint, os.path.join(out_dir, 'pytorch_model.bin'))
     tokenizer.save_pretrained(out_dir)
 
 if ddp:
