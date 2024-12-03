@@ -8,10 +8,7 @@ idk why am i doing this
   python train.py
 ```
 
-## to process data:
-```bash
-  python data/process.py
-```
+
 
 ## to download the alr tokenized dataset:
 ```bash
