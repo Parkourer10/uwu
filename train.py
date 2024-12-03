@@ -38,7 +38,7 @@ bias = False
 # adamw optimizer
 learning_rate = 6e-4
 # learning_rate = 3e-4
-num_epochs = 2 # total number of epochs
+num_epochs = 1 # total number of epochs
 weight_decay = 1e-1
 beta1 = 0.9
 beta2 = 0.95
