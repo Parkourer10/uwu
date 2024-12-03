@@ -9,6 +9,7 @@ from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.distributed import init_process_group, destroy_process_group
 from model import GPTConfig, GPT
 from transformers import GPT2Tokenizer
+import json
 
 
 # -----------------------------------------------------------------------------
@@ -325,6 +326,11 @@ if master_process:
     }
     torch.save(checkpoint, os.path.join(out_dir, 'pytorch_model.bin'))
     tokenizer.save_pretrained(out_dir)
+    # Save config as JSON
+    config_path = os.path.join(out_dir, 'config.json')
+    with open(config_path, 'w') as f:
+        json.dump(config, f, indent=4)
+    print(f"Config saved to {config_path}")
 
 if ddp:
     destroy_process_group()
