@@ -1,4 +1,4 @@
-fork of nanoGPT to train a 60m model on 1/3 of openwebtext , bookcorpus , wikitext and dailydialog
+fork of nanoGPT to train a 60m model.
 idk why am i doing this
 
 
