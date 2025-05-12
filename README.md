@@ -8,13 +8,6 @@ idk why am i doing this
   python train.py
 ```
 
-
-
-## to download the alr tokenized dataset:
-```bash
-  python data/download.py
-```
-
 ## to continue training:
 ```bash
   python train.py config/continue.py
